@@ -1,0 +1,26 @@
+/**********************************************
+*example:
+*param: productId = 1//产品id
+*       userId = 2   //用户id
+*method:GET
+*export const AJAXAPI = 'example/ajaxuri'
+*descript:AJAXAPI 用于展示例子
+***********************************************/
+export const bannerListApi = '/bannerlist' // 首页banner
+export const productSortApi = '/productSort' // 首页产品分类
+export const productListApi = '/productList' // 首页产品分类
+export const smsApi = '/smsApi' // 短信验证
+export const forgetPwdApi = '/forgetPwdApi' // 忘记密码
+export const loginApi = '/loginApi' // 登录
+export const logoutApi = '/logoutApi' // 登出
+export const signupApi = '/signupApi' // 注册
+export const extensionCodeApi = '/extensionCodeApi' // 推广码
+<<<<<<< .merge_file_8ZJQS8
+export const getUserInfoApi = '/getUserInfoApi' // 获取用户信息
+export const getMsg = '/getMsg' // 站内信
+export const getDetailData = '/detaildata' // 获取详情页数据
+=======
+export const userInfoApi = '/getUserInfoApi' // 获取用户信息
+export const msgApi = '/getMsg' // 站内信
+export const trialInitialApi = '/getTrail' // 站内信
+>>>>>>> .merge_file_IuhYMu

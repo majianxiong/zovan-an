@@ -1,0 +1,100 @@
+.qtype{
+  background: #fff;
+  &>dl{
+    margin-left: rem-calc(40px);
+    position: relative;
+    color:#333;
+    &>dt{
+      line-height: rem-calc(25px);
+      vertical-align: middle;
+      font-size: rem-calc(16px);
+      position: relative;
+      margin-bottom: rem-calc(5px);
+      &>i{
+        position: absolute;
+        left: rem-calc(-30px);
+        font-size: rem-calc(14px);
+        font-weight: normal;
+        font-style:normal;
+        text-align: right;
+        width: rem-calc(25px);
+      }
+      &>ul{display: table;width:100%;
+        &>li{
+          display: table-cell;
+          list-style: none;
+        }
+        &>li:last-child{
+          padding-right: rem-calc(15px);
+          width: rem-calc(65px);
+        }
+      }
+    }
+    &>dd{
+      .smokequestionbox{
+        margin: rem-calc(10px) 0 0;
+        &>ul>li{
+          display: block;
+        }
+      }
+
+
+      .questiontable{
+        display: table;
+        width:100%;
+        line-height: 30px;
+        height: 30px;
+        vertical-align: top;
+
+        &>div{
+          display: table-cell;
+          &:first-child{
+            width:rem-calc(100px);
+          }
+          &>.smokebox{
+            position: relative;top: 3px;
+            &>ul>li{
+              display: inline-block;
+              margin-right: rem-calc(10px);
+            }
+          }
+        }
+      }
+      &>.reasonarea{
+        width:98%;
+        height: rem-calc(35px);
+        padding: 1%;
+        outline: none;
+      }
+    }
+    &>dd{
+      padding-right: 15px;
+      &>ul{
+        display:table;
+        width:100%;
+        margin-right: rem-calc(15px);
+        &>li{
+          display: table-cell;
+          list-style: none;
+          font-size: rem-calc(16px);
+          height: rem-calc(45px);
+          line-height: rem-calc(45px);
+          vertical-align: middle;
+          &:last-child{
+            width:rem-calc(30px);
+          }
+          &>input{
+            width:90%;
+            -webkit-appearance: none;
+            border:none;
+            height: 80%;
+            font-size: rem-calc(16px);
+            margin-bottom: 1px;
+            outline: none;
+            text-indent: rem-calc(10px);
+          }
+        }
+      }
+    }
+  }
+}

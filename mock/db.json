@@ -1,0 +1,220 @@
+{
+  "bannerlist": {
+    "method": "get",
+    "descript": "home banner",
+    "author": "zhuyi",
+    "data": {
+      "result": true,
+      "items": [
+        {
+          "link": "/",
+          "url": "/static/pic/banner.jpg",
+          "title": "banner"
+        },
+        {
+          "link": "/",
+          "url": "/static/pic/banner.jpg",
+          "title": "banner2"
+        }
+      ]
+    }
+  },
+  "productSort": {
+    "method": "get",
+    "descript": "home tabs",
+    "author": "zhuyi",
+    "data": {
+      "result": true,
+      "items": [
+        {
+          "text": "类型1",
+          "query": "sort1"
+        },
+        {
+          "text": "类型2",
+          "query": "sort2"
+        },
+        {
+          "text": "类型3",
+          "query": "sort3"
+        },
+        {
+          "text": "类型4",
+          "query": "sort4"
+        },
+        {
+          "text": "类型5",
+          "query": "sort5"
+        },
+        {
+          "text": "类型6",
+          "query": "sort6"
+        },
+        {
+          "text": "类型7",
+          "query": "sort7"
+        },
+        {
+          "text": "类型8",
+          "query": "sort8"
+        },
+        {
+          "text": "类型9",
+          "query": "sort9"
+        },
+        {
+          "text": "类型10",
+          "query": "sort10"
+        }
+      ]
+    }
+  },
+  "productList": {
+    "method": "post",
+    "descript": "home productlist",
+    "author": "zhuyi",
+    "data": {
+      "result": true,
+      "items": [
+        {
+          "link": "/",
+          "imgurl": "/static/pic/banner.jpg",
+          "title": "康健一生(多倍保)终生重大疾病险",
+          "desc": ["百万保障","意外医疗","住院津贴"],
+          "price": "130.00",
+          "promotion": "10",
+          "sales": "100万",
+          "brandname": "新华人寿",
+          "slogan": "新一站代销"
+        },
+        {
+          "link": "/",
+          "imgurl": "/static/pic/banner.jpg",
+          "title": "康健一生(多倍保)终生重大疾病险2",
+          "desc": ["百万保障","意外医疗","住院津贴"],
+          "price": "230.00",
+          "promotion": "20",
+          "sales": "200万",
+          "brandname": "新华人寿",
+          "slogan": "新一站代销"
+        }
+      ]
+    }
+  },
+  "repay": {
+    "method": "get",
+    "descript": "repay",
+    "author": "zhuyi",
+    "data": {
+      "item": {
+        "payway": "默认",
+        "carduser": "张三",
+        "cardbank": "招商银行",
+        "cardnum": "6214832132561000",
+        "paynum": "3000"
+      },
+      "paylist": [
+        {
+          "name": "实时扣款",
+          "value": "实时扣款"
+        },
+        {
+          "name": "隔日到账",
+          "value": "实时扣款"
+        },
+        {
+          "name": "月底结账",
+          "value": "实时扣款"
+        }
+      ]
+    }
+  },
+  "detaildata": {
+    "groupdata": [
+      {"id":0, "title":"保障计划", "value":"50万"},
+      {"id":1, "title":"投保年龄", "value":"18-50周岁"},
+      {"id":2, "title":"保障期限", "value":"20年"}
+    ],
+    "tabs": {
+      "charactor": {
+      },
+      "rule": {
+        "notice": "爱丽丝的房间爱了；盛开的房间；拉盛开的房间",
+        "tabledata": [
+          {"id":0, "title":"哈哈", "data":"呵呵哒"},
+          {"id":1, "title":"哈哈", "data":"呵呵哒"}
+        ],
+        "response": [
+          {"id":0, "number":1, "data":"阿斯顿发送到发送到发斯蒂芬"},
+          {"id":1, "number":2, "data":"阿斯顿发送到发送到发斯蒂芬"}
+        ]
+      },
+      "plan": {
+        "tabledata": [
+          {"id":0, "title":"哈哈", "data1":"呵呵哒", "data2":"哈哈哒"},
+          {"id":1, "title":"哈哈", "data1":"呵呵哒", "data2":"哈哈哒"}
+        ]
+      }
+    }
+  },
+  "planlist": [
+    {
+      "title": "康健一生(多倍保)终生重大疾病险",
+      "icon": "/static/pic/plan/icon-blue.png",
+      "birthday": "2017/2/13",
+      "sex":0,
+      "age":"20周岁",
+      "limit":"10年",
+      "duration":"20年",
+      "recent":"2017/04/17 19:31:22",
+      "price":10000
+    },
+    {
+      "title": "保啊住院无忧保障计划（计划一）",
+      "icon": "/static/pic/plan/icon-red.png",
+      "birthday": "2017/2/13",
+      "sex":1,
+      "age":"20周岁",
+      "limit":"10年",
+      "duration":"20年",
+      "recent":"2017/04/17 19:31:22",
+      "price":10000
+    }
+  ],
+  "plandata": {
+    "headerList": [
+      {"main":"保障金额(元)", "sub":"5.000.00"},
+      {"main":"年交保费(元)", "sub":"129.50"},
+      {"main":"保障期限", "sub":"终生"},
+      {"main":"缴费年限", "sub":"20<span>年交</span>"}
+    ],
+    "healthList": [
+      {"main":"100种重疾保障重疾金 <span>500000元</span>", "sub":"全面赔付 无需担心后续费用 专注诊疗"},
+      {"main":"50种轻症给付 <span>100000元/次</span>", "sub":"50种轻症给付 100000元/次"},
+      {"main":"疾病终末期给付 <span>500000元</span>", "sub":"人性设计 延续温暖"}
+    ],
+    "basicList": [
+      "身故/全残金 <span>500000元</span>",
+      "50种轻症给付 <span>100000元/次</span>"
+    ],
+    "remitList": [
+      "若被保险人发生轻症，免交后期主合同和附加重疾的保费，保障不断。免交后期主合同和附加重疾的保费，保障不断。"
+    ],
+    "birthList": [
+      "79岁一次性返还 <span>500000元</span>"
+    ],
+    "insureList": [
+      "等待期限90天，因意外不受90天限制。",
+      "投保人在保单犹豫期后解除合同会遭受一定损失，本计划书仅供参考。",
+      "具体保单利益请以保单合同为准。"
+    ]
+  },
+  "auth": {
+  },
+  "authface": {
+  },
+  "authsucc": {
+    "name": "za-geyan",
+    "sex": 0
+  }
+}

@@ -1,0 +1,224 @@
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 14px !default;
+$bgGray: #f7f7f7;
+
+// IMPORT ONCE
+// We use this to prevent styles from being loaded multiple times for compenents that rely on other components.
+$modules: () !default;
+@mixin exports($name) {
+  @if (index($modules, $name) == false) {
+    $modules: append($modules, $name);
+    @content;
+  }
+}
+
+//
+// @functions
+//
+
+
+// RANGES
+// We use these functions to define ranges for various things, like media queries.
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+// STRIP UNIT
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// CONVERT TO REM
+@function convert-to-rem($value, $base-value: $rem-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+@function data($attr) {
+  @if $namespace {
+    @return '[data-' + $namespace + '-' + $attr + ']';
+  }
+
+  @return '[data-' + $attr + ']';
+}
+
+// REM CALC
+
+// New Syntax, allows to optionally calculate on a different base value to counter compounding effect of rem's.
+// Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported:
+//
+//   rem-calc(10 20 30px 40);
+//
+// Space delimited, if you want to delimit using comma's, wrap it in another pair of brackets
+//
+//   rem-calc((10, 20, 30, 40px));
+//
+// Optionally call with a different base (eg: 8px) to calculate rem.
+//
+//   rem-calc(16px 32px 48px, 8px);
+//
+// If you require to comma separate your list
+//
+//   rem-calc((16px, 32px, 48), 8px);
+
+@function rem-calc($values, $base-value: $rem-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
+
+  $remValues: ();
+  @for $i from 1 through $max {
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+  }
+  @return $remValues;
+}
+
+// OLD EM CALC
+// Deprecated: We'll drop support for this in 5.1.0, use rem-calc()
+@function emCalc($values){
+  @return rem-calc($values);
+}
+
+// OLD EM CALC
+// Deprecated: We'll drop support for this in 5.1.0, use rem-calc()
+@function em-calc($values){
+  @return rem-calc($values);
+}
+
+// line 0.5 border
+@mixin convert-to-1px($borderColor,$borderRadius) {
+  position: relative;
+  &:before {
+    content: "";
+    width: 198%;
+    height: 198%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    // padding: 1px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+}
+@mixin convert-to-1px-after($borderColor,$borderRadius) {
+  position: relative;
+  &:after {
+    content: "";
+    width: 198%;
+    height: 198%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    // padding: 1px;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+}
+@mixin borderbottom{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+@mixin border-1px($borderColor,$position) {
+  background-size: 100% 1px;
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(linear, left bottom, left top, from($borderColor), color-stop(0%, $borderColor), color-stop(50%, transparent));
+}
+@mixin bordertop-1px($borderColor) {
+  background-size: 100% 1px;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(0deg, $borderColor 0%, $borderColor 50%, transparent 100%);
+}
+@mixin borderbottom-1px($borderColor) {
+  background-size: 100% 1px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(180deg, $borderColor 0%, $borderColor 50%, transparent 100%);
+}
+
+//text-ellipsis
+@mixin ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+
+@mixin trans3d{
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+}
+
+@mixin display-flex($direction:'column'){
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  // -webkit-box-orient: vertical;
+  // -webkit-box-direction: normal;
+  // -webkit-flex-direction: column;
+  flex-direction: unquote($direction);
+}
+
+@mixin button($bgcolor:#00aeff,$fcolor:#fff){
+  font-size:rem-calc(18px);
+  background-image: -webkit-linear-gradient( 0deg, rgb(108,217,182) 0%, rgb(54,210,159) 45%, rgb(0,203,135) 100%);
+  border-radius:4px;
+  color:#fff;
+  border:none;
+  width:rem-calc(350px);
+  height:rem-calc(46px);
+}
+@mixin fullpage($top:0,$bottom:0){
+  position: absolute;
+  top:0;left:0;right:0;bottom:0;
+  margin: auto;
+}
+
+@mixin gradientbtn{
+  background-image: -webkit-linear-gradient( 0deg, rgb(108,217,182) 0%, rgb(54,210,159) 45%, rgb(0,203,135) 100%);
+  text-align:center;
+  font-size:18px;
+  color:#fff;
+}
