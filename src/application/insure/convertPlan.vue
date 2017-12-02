@@ -160,7 +160,7 @@
   </div>
 </template>
 <script>
-  import { PopupPicker, Datetime, Checker, CheckerItem, Group, Cell, Cellbox, XSwitch } from "vux"
+  import { PopupPicker, Datetime, Checker, CheckerItem, Group, Cell, CellBox, XSwitch } from "vux"
   import { getProductInfo, ajax, trialApi, convertPlanApi } from "src/api"
   import cookie from 'src/widget/plugin/cookie'
   let userid = cookie.get('http_userID') ? cookie.get('http_userID') : ''
